@@ -12,8 +12,8 @@ import  SecondScreen  from '../screens/SecondScreen';
 import  ThirdScreen from '../screens/ThirdScreen';
 
 import { createStackNavigator } from '@react-navigation/stack';
-
-
+import Ionicons from 'react-native-vector-icons/Ionicons';
+Ionicons.loadFont().then(); // To avoid 'Unrecognized font family ionicons' Warning
 
 const Stack = createStackNavigator();
 
@@ -27,14 +27,15 @@ const NavigationDrawerStructure = (props)=> {
   return (
     <View style={{ flexDirection: 'row' }}>
       <TouchableOpacity onPress={()=> toggleDrawer()}>
-        <Image
+      <Ionicons name='ios-menu' size={23} color='white' />
+        {/* <Image
           source={{uri: 'https://raw.githubusercontent.com/AboutReact/sampleresource/master/drawerWhite.png'}}
           style={{
             width: 25,
             height: 25,
             marginLeft: 5
           }}
-        />
+        /> */}
       </TouchableOpacity>
     </View>
   );
